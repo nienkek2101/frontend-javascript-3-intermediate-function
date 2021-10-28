@@ -78,7 +78,6 @@ const emailFour = typeOfEmail("novi.nlaapjesk@outlook.com")
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
 
 // poging 2
-
 function checkEmailValidity(emailadress) {
     // bevatApenstaartje moet true zijn
     // bevatKomma moet false zijn
@@ -87,10 +86,11 @@ function checkEmailValidity(emailadress) {
     const bevatApenstaartje = emailadress.includes("@");
     const bevatKomma = emailadress.includes(",");
     const aantalKarakters = emailadress.length;
+    const indexlaatstePunt = aantalKarakters - 1;
     // const laatstePunt = aantalKarakters.includes(".");
 
     console.log(aantalKarakters);
-    if ((bevatApenstaartje) && (bevatKomma === false) && (aantalKarakters !== ".")) {
+    if ((bevatApenstaartje) && (bevatKomma === false) && ((emailadress[indexlaatstePunt]) !== ".")) {
         console.log("Dit e-mailadres klopt");
     } else {
         console.log("Dit e-mailadres klopt niet")
@@ -98,14 +98,11 @@ function checkEmailValidity(emailadress) {
 
 }
 
-
-
 const emailFive = checkEmailValidity("n.eeken@novi-education.nl");
 const emailSix = checkEmailValidity("tessameilink@novi.nl");
 const emailSeven = checkEmailValidity("n.eekenanovi.nl");
 const emailEight = checkEmailValidity("n.eeken@novinl.");
 const emailNine = checkEmailValidity("tessmellink@novi,nl");
-
 
 // poging 1
 // function checkEmailValidity(emailadress) {
@@ -131,8 +128,6 @@ const emailNine = checkEmailValidity("tessmellink@novi,nl");
 //     //     console.log("No");
 //     // }
 // }
-//
-//
 //
 // const emailFive = checkEmailValidity("n.eeken@novi-education.nl");
 // const emailSix = checkEmailValidity("tessameilink@novi.nl");
