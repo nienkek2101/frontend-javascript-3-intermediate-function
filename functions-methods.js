@@ -77,6 +77,8 @@ const emailFour = typeOfEmail("novi.nlaapjesk@outlook.com")
 // checkEmailValidity("n.eeken@novinl.") geeft false - want de punt mag niet als laatst
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
 
+// poging 2
+
 function checkEmailValidity(emailadress) {
     // bevatApenstaartje moet true zijn
     // bevatKomma moet false zijn
@@ -85,20 +87,15 @@ function checkEmailValidity(emailadress) {
     const bevatApenstaartje = emailadress.includes("@");
     const bevatKomma = emailadress.includes(",");
     const aantalKarakters = emailadress.length;
-    const laatstePunt = aantalKarakters.includes(".");
+    // const laatstePunt = aantalKarakters.includes(".");
 
     console.log(aantalKarakters);
-    if ((bevatApenstaartje = true) && (bevatKomma = false ) && (laatstePunt = false)) {
+    if ((bevatApenstaartje) && (bevatKomma === false) && (aantalKarakters !== ".")) {
         console.log("Dit e-mailadres klopt");
     } else {
         console.log("Dit e-mailadres klopt niet")
     }
 
-    // if (emailadress.includes("@") && emailadress.includes(",") = false) {
-    //     console.log("Yes");
-    // } else {
-    //     console.log("No");
-    // }
 }
 
 
@@ -108,3 +105,37 @@ const emailSix = checkEmailValidity("tessameilink@novi.nl");
 const emailSeven = checkEmailValidity("n.eekenanovi.nl");
 const emailEight = checkEmailValidity("n.eeken@novinl.");
 const emailNine = checkEmailValidity("tessmellink@novi,nl");
+
+
+// poging 1
+// function checkEmailValidity(emailadress) {
+//     // bevatApenstaartje moet true zijn
+//     // bevatKomma moet false zijn
+//     // laatstePunt moet false zijn
+//
+//     const bevatApenstaartje = emailadress.includes("@");
+//     const bevatKomma = emailadress.includes(",");
+//     const aantalKarakters = emailadress.length;
+//     const laatstePunt = aantalKarakters.includes(".");
+//
+//     console.log(aantalKarakters);
+//     if ((bevatApenstaartje = true) && (bevatKomma = false ) && (laatstePunt = false)) {
+//         console.log("Dit e-mailadres klopt");
+//     } else {
+//         console.log("Dit e-mailadres klopt niet")
+//     }
+//
+//     // if (emailadress.includes("@") && emailadress.includes(",") = false) {
+//     //     console.log("Yes");
+//     // } else {
+//     //     console.log("No");
+//     // }
+// }
+//
+//
+//
+// const emailFive = checkEmailValidity("n.eeken@novi-education.nl");
+// const emailSix = checkEmailValidity("tessameilink@novi.nl");
+// const emailSeven = checkEmailValidity("n.eekenanovi.nl");
+// const emailEight = checkEmailValidity("n.eeken@novinl.");
+// const emailNine = checkEmailValidity("tessmellink@novi,nl");
